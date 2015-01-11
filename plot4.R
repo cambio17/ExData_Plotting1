@@ -36,10 +36,10 @@ with(df, {
     lines(DateTime, Voltage)
     
     # graph #4.3
-    with(df, plot(DateTime, Sub_metering_1, type = "n", xlab = "", ylab = ""))
-    with(df, lines(DateTime, Sub_metering_1))
-    with(df, lines(DateTime, Sub_metering_2, col = "red"))
-    with(df, lines(DateTime, Sub_metering_3, col = "blue"))
+    plot(DateTime, Sub_metering_1, type = "n", xlab = "", ylab = "")
+    lines(DateTime, Sub_metering_1)
+    lines(DateTime, Sub_metering_2, col = "red")
+    lines(DateTime, Sub_metering_3, col = "blue")
     legend("topright",
            bty = "n",
            cex = 0.9,
