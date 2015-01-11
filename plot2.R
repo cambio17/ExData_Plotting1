@@ -1,4 +1,6 @@
 
+# It is required that the "household_power_consumption.txt" file
+# is present in the working directory
 
 # read the dataset
 df <- read.csv("household_power_consumption.txt",
@@ -6,7 +8,7 @@ df <- read.csv("household_power_consumption.txt",
                stringsAsFactors = F,
                na.strings = "?")
 
-# subset the dataset by extraction data for two days only
+# subset the dataset by extraction the data for two days only
 df <- df[df$Date == "1/2/2007" | df$Date == "2/2/2007",]
 
 # transform the Date and Time variables into one variable of the type "POSIXt"
@@ -19,7 +21,7 @@ for (i in 1:6) {
     df[,i] <- as.numeric(df[,i])
 }
 
-# graph #2
+# plot the graph #2
 png("plot2.png")
 with(df, plot(DateTime, Global_active_power, type = "n", xlab = "", ylab = ""))
 with(df, lines(DateTime, Global_active_power))
